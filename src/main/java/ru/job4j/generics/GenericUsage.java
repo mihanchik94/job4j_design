@@ -25,6 +25,13 @@ public class GenericUsage {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5);
         new GenericUsage().printRsl(numbers);
 
+        //пример реализации метода printInfo():
+        List<Person> per = List.of(new Person("name", 21, new Date(913716000000L)));
+        new GenericUsage().printInfo(per);
+
+        List<Programmer> pro = List.of(new Programmer("name123", 23, new Date(913716000000L)));
+        new GenericUsage().printInfo(pro);
+
     }
 
     /**
@@ -33,7 +40,7 @@ public class GenericUsage {
      *Так как Collection<Object> не является полностью родительской коллекцией всех остальных коллекций, (т.е. имеет ограничения - например, в методе main() для типа данных в списке Integer мы получим ошибку компиляции),
      *Вместо public void printRsl(Collection<Object> col) {...
      *Мы используем так называемый WildCard: public void printRsl(Collection<?> col) {...
-     *В этом случае ограничений в использовании не будет (т.е. он имеет соответствие с любым типом).
+     *В этом случае ограничений в использовании не будет.
      */
 
     public void printRsl(Collection<?> col) {
@@ -43,4 +50,27 @@ public class GenericUsage {
             System.out.println("Текущий элемент: " + next);
         }
     }
+
+    /**
+     *Рассмотрим второе стредство обобщенного программирования, которое называется Bounded Wildcard:
+     *Мы создали класс Programmer, который наследуется от Person.
+     *При создании метода, который позволит вывести в консоль все элементы коллекции,
+     *которая может содержать объекты Person или объекты класса Programmer,
+     *в случае, если мы укажем явный тип Person (public void printInfo(Collection<Person> col) {...)
+     *и попытаемся добавить в коллекцию объект класса Programmer, мы получим ошибку в связи с несовместимостью типов.
+     *Для того чтобы справиться с проблемой используется так называемое "Ограничение сверху" или Bounded Wildcard.
+     *В этом случае вместо <Person> записывается конструкция <? extends Person> (public void printInfo(Collection<? extends Person> col) {..)
+     *При таком случае ошибки компиляции не будет.
+     */
+
+    public void printInfo(Collection<? extends Person> col) {
+        System.out.println("Реализация метода printInfo:");
+        for (Iterator<? extends Person> it = col.iterator(); it.hasNext();) {
+            Person next = it.next();
+            System.out.println(next);
+        }
+    }
+
+
+
 }
