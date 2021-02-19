@@ -1,5 +1,6 @@
 package ru.job4j.generics;
 
+import java.io.OutputStream;
 import java.util.*;
 
 /**
@@ -32,6 +33,10 @@ public class GenericUsage {
         List<Programmer> pro = List.of(new Programmer("name123", 23, new Date(913716000000L)));
         new GenericUsage().printInfo(pro);
 
+        //пример реализации метода addAll:
+        List<? super Integer> lst = new ArrayList<>();
+        new GenericUsage().addAll(lst);
+
     }
 
     /**
@@ -52,7 +57,7 @@ public class GenericUsage {
     }
 
     /**
-     *Рассмотрим второе стредство обобщенного программирования, которое называется Bounded Wildcard:
+     *Рассмотрим второе средство обобщенного программирования, которое называется Bounded Wildcard:
      *Мы создали класс Programmer, который наследуется от Person.
      *При создании метода, который позволит вывести в консоль все элементы коллекции,
      *которая может содержать объекты Person или объекты класса Programmer,
@@ -68,6 +73,26 @@ public class GenericUsage {
         for (Iterator<? extends Person> it = col.iterator(); it.hasNext();) {
             Person next = it.next();
             System.out.println(next);
+        }
+    }
+
+    /**
+     *До этого мы рассмотрели ограничение типа сверху.
+     *Теперь рассмортим третье средство обобщенного программирования (ограничение снизу), которое называется Lower bounded Wildcard:
+     *Представим себе ситуацию, что мы хотим написать метод, который помещает объекты Integer в список и выводить этот список в консоль.
+     *При этом наш метод должен быть более гибким и работал не только с типом Integer, но и с его суперклассами (т.е. Number и Object).
+     *Чтобы реализовать такой метод, то в его объявлении должна фигурировать такая строка - List<? super Integer>.
+     *Важно понимать, что запись List<Integer> является более строгой, чем List<? super Integer>, потому что первый соответствует списку только типа Integer,
+     *тогда как второй соответствует списку любого типа, который является супертипом Integer.
+     */
+
+    public void addAll(List<? super Integer> list) {
+        System.out.println("Реализация метода addAll:");
+        for (int i = 0; i <= 5; i++) {
+            list.add(i);
+        }
+        for (Object o : list) {
+            System.out.println("Текущий элемент: " + o);
         }
     }
 
