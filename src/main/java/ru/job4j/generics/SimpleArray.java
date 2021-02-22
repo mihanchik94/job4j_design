@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
+ * REV.1.01
+ *
  *Необходимо сделать универсальную обертку над массивом.
  *методы:
  * add(T model) - добавляет указанный элемент (model) в первую свободную ячейку;
@@ -50,13 +52,12 @@ public class SimpleArray<T> implements Iterable<T> {
         System.arraycopy(array, ind + 1, array, ind, size - ind - 1);
         array[size - 1] = null;
         size--;
-
     }
 
     public T get(int index) {
+        Objects.checkIndex(index, size);
         return (T) array[index];
     }
-
 
 
 
@@ -66,7 +67,7 @@ public class SimpleArray<T> implements Iterable<T> {
             private int currentInd = 0;
             @Override
             public boolean hasNext() {
-                return currentInd < array.length;
+                return currentInd < size;
             }
 
             @Override
