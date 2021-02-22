@@ -54,7 +54,7 @@ public class SimpleArray<T> implements Iterable<T> {
     }
 
     public T get(int index) {
-       return (T) array[index];
+        return (T) array[index];
     }
 
 
