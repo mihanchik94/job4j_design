@@ -4,11 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * R.1.01 - Добавили в данную ревизию дополнительный метод поиска индекса элемента по id
+ * R.1.02 - Изменили работу методов
  */
-
-
-
 
 
 public class MemStore<T extends Base> implements Store<T> {
@@ -21,34 +18,37 @@ public class MemStore<T extends Base> implements Store<T> {
 
     @Override
     public boolean replace(String id, T model) {
-        if (findIndById(id) == -1) {
-            return false;
+        int ind = findIndById(id);
+        if (findIndById(id) != -1) {
+            this.mem.set(ind, model);
+            return true;
         }
-        this.mem.set(this.mem.indexOf(findById(id)), model);
-        return true;
+       return false;
         }
 
 
     @Override
     public boolean delete(String id) {
-        if (findIndById(id) == -1) {
-            return false;
+        int ind = findIndById(id);
+        if (findIndById(id) != -1) {
+            mem.remove(ind);
+            return true;
         }
-        return this.mem.remove(findById(id));
+        return false;
     }
 
     @Override
     public T findById(String id) {
-        if (findIndById(id) == -1) {
-            return null;
+        if (findIndById(id) != -1) {
+            for (T item : mem) {
+                if (item.getId().equals(id)) {
+                    return item;
+                }
         }
-        for (T item : mem) {
-            if (item.getId().equals(id)) {
-                return item;
-            }
         }
-        throw new NullPointerException("This id doesn't exist");
+        return null;
     }
+
 
     @Override
     public int findIndById(String id) {
