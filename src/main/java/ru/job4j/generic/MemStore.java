@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * R.1.02 - Изменили работу методов
+ * R.1.03 - Исправил методы replace и delete
  */
 
 
@@ -19,7 +19,7 @@ public class MemStore<T extends Base> implements Store<T> {
     @Override
     public boolean replace(String id, T model) {
         int ind = findIndById(id);
-        if (findIndById(id) != -1) {
+        if (ind != -1) {
             this.mem.set(ind, model);
             return true;
         }
@@ -30,7 +30,7 @@ public class MemStore<T extends Base> implements Store<T> {
     @Override
     public boolean delete(String id) {
         int ind = findIndById(id);
-        if (findIndById(id) != -1) {
+        if (ind != -1) {
             mem.remove(ind);
             return true;
         }
