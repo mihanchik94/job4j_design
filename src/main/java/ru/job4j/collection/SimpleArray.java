@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-/** R.1.02
+/** R.1.03
  * Создадим реализацию ArrayList. ArrayList - это массив.
  * Когда элементов становится больше чем ячеек, в массиве ArrayList создает новый массив с большим размером.
  * Внутри контейнер должен базироваться на массиве Object[] container.
@@ -44,7 +44,7 @@ import java.util.Objects;
  */
 
 public class SimpleArray<T> implements Iterable<T> {
-    int modCount;
+    private int modCount;
     private int size = 0;
     private int capacity = 10;
     private Object[] container = new Object[capacity];
