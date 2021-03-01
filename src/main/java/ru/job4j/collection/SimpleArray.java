@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-/**
+/** R.1.01
  * Создадим реализацию ArrayList. ArrayList - это массив.
  * Когда элементов становится больше чем ячеек, в массиве ArrayList создает новый массив с большим размером.
  * Внутри контейнер должен базироваться на массиве Object[] container.
@@ -43,43 +43,38 @@ import java.util.Objects;
  * 4. Не путать null элементы и пустые ячейки контейнера. Список может содержать null элементы.
  */
 
-public class SimpleArray<T> implements Iterable {
-    int modCount;
+public class SimpleArray<T> implements Iterable<T> {
+    private int modCount;
     private int size = 0;
     private int capacity = 10;
-    Object[] container = new Object[capacity];
-
+    private Object[] container = new Object[capacity];
 
     public T get(int index) {
         Objects.checkIndex(index, size);
         return (T) container[index];
     }
 
+
     public int getSize() {
         return size;
     }
-
 
     public void add(T model) {
         if (container.length == size) {
             resize(container.length + 10);
         }
         container[size++] = model;
+        modCount++;
     }
 
-    public void resize(int newLength) {
-        Object[] newCont = new Object[newLength];
-        System.arraycopy(container, 0, newCont, 0, size);
-        container = newCont;
+    private void resize(int newLength) {
+        Object[] newContainer = new Object[newLength];
+        System.arraycopy(container, 0, newContainer, 0, size);
+        container = newContainer;
     }
-
-    public int getModCount() {
-        return modCount;
-    }
-
 
     @Override
-    public Iterator iterator() {
+    public Iterator<T> iterator() {
         class SimpleArrayIterator<T> implements Iterator<T> {
             private int count = 0;
             private final int expectedModCount;
@@ -87,20 +82,20 @@ public class SimpleArray<T> implements Iterable {
 
             SimpleArrayIterator(SimpleArray<T> array) {
                 this.simpleArray = array;
-                this.expectedModCount = array.getModCount();
+                this.expectedModCount = array.modCount;
             }
 
             private boolean isModified() {
-                return simpleArray.getModCount() == expectedModCount;
+                return simpleArray.modCount != expectedModCount;
             }
 
             @Override
             public boolean hasNext() {
-                    if (isModified()) {
-                        throw new ConcurrentModificationException();
-                    }
-                    return count < simpleArray.getSize();
+                if (isModified()) {
+                    throw new ConcurrentModificationException();
                 }
+                return count < simpleArray.getSize();
+            }
 
             @Override
             public T next() {
