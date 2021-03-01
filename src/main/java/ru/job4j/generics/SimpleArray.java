@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 
 /**
- * REV.1.01
+ * REV.1.02
  *
  *Необходимо сделать универсальную обертку над массивом.
  *методы:
@@ -55,7 +55,6 @@ public class SimpleArray<T> implements Iterable<T> {
     }
 
     public T get(int index) {
-        Objects.checkIndex(index, size);
         return (T) array[index];
     }
 
