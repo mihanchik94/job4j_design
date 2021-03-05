@@ -27,7 +27,7 @@ import java.util.Objects;
 
 public class LinkedArray<E> implements Iterable<E> {
     private Node<E> first;
-    private Node<E> last;
+    private Node<E> last;''
     private int size;
     private int modCount;
 
