@@ -23,36 +23,34 @@ import java.util.Objects;
  * Например, добавили 3 элемента. Каким может быть индекс? [0, 2]. Для проверки индекса используйте метод Objects.checkIndex.
  */
 
-
-
 public class LinkedArray<E> implements Iterable<E> {
     private Node<E> first;
-    private Node<E> last;''
+    private Node<E> last;
     private int size;
     private int modCount;
 
     public void add(E value) {
-        Node<E> item = new Node<>(value, size++);
-            if (first == null) {
-                first = item;
-            } else {
-                last.next = item;
-            }
-            last = item;
-            modCount++;
+        Node<E> elm = new Node<>(value);
+        if (first == null) {
+            first = elm;
+        } else {
+            last.next = elm;
         }
+        last = elm;
+        size++;
+        modCount++;
+    }
 
-        public E get(int index) {
-            Objects.checkIndex(index, size);
-            Node<E> current = last;
-            while (current.index != index) {
-                if (current.next == null) {
-                    return null;
-                }
-                current = current.next;
-            }
-            return current.value;
+    public E get(int index) {
+        Objects.checkIndex(index, size);
+        Node<E> current = first;
+        int i = 0;
+        while (i < index) {
+            current = current.next;
+            i++;
         }
+        return current.value;
+    }
 
     public int getModCount() {
         return modCount;
@@ -66,10 +64,8 @@ public class LinkedArray<E> implements Iterable<E> {
         private E value;
         private Node<E> next;
         private int index;
-
-        public Node(E value, int index) {
+        public Node(E value) {
             this.value = value;
-            this.index = index;
         }
     }
 
@@ -103,6 +99,5 @@ public class LinkedArray<E> implements Iterable<E> {
         }
         return new LinkedArrayIterator<>(this);
     }
-
-
 }
+
