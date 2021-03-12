@@ -30,7 +30,7 @@ public class LinkedArray<E> implements Iterable<E> {
     private int modCount;
 
     public void add(E value) {
-        Node<E> elm = new Node<>(value);
+        Node<E> elm = new Node<>(last, value, null);
         if (first == null) {
             first = elm;
         } else {
@@ -52,52 +52,47 @@ public class LinkedArray<E> implements Iterable<E> {
         return current.value;
     }
 
-    public int getModCount() {
-        return modCount;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    private class Node<E> {
+    private static class Node<E> {
+        private Node<E> prev;
         private E value;
         private Node<E> next;
-        private int index;
-        public Node(E value) {
+
+        public Node(Node<E> prev, E value, Node<E> next) {
+            this.prev = prev;
             this.value = value;
+            this.next = next;
         }
     }
 
     @Override
     public Iterator<E> iterator() {
-        class LinkedArrayIterator<E> implements Iterator<E> {
-            private LinkedArray<E> linkedArray;
-            private int count = 0;
-            private int modCount;
-
-            public LinkedArrayIterator(LinkedArray<E> linkedArray) {
-                this.linkedArray = linkedArray;
-                this.modCount = linkedArray.getModCount();
-            }
+        return new Iterator<E>() {
+            private int expectedModCount = modCount;
+            private Node<E> temp = first;
+            int count = 0;
 
             @Override
             public boolean hasNext() {
-                if (modCount !=  linkedArray.getModCount()) {
+                if (modCount != expectedModCount) {
                     throw new ConcurrentModificationException();
                 }
-                return count < linkedArray.getSize();
+                return count < size;
             }
 
             @Override
             public E next() {
+
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                return linkedArray.get(count++);
+                if (modCount != expectedModCount) {
+                    throw new ConcurrentModificationException();
+                }
+                E result = temp.value;
+                temp = temp.next;
+                return result;
             }
-        }
-        return new LinkedArrayIterator<>(this);
+        };
     }
 }
 
