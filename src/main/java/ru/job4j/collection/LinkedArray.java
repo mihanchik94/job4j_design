@@ -73,10 +73,7 @@ public class LinkedArray<E> implements Iterable<E> {
 
             @Override
             public boolean hasNext() {
-                if (modCount != expectedModCount) {
-                    throw new ConcurrentModificationException();
-                }
-                return count < size;
+                return temp != null;
             }
 
             @Override
