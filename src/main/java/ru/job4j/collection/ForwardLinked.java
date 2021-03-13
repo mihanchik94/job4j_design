@@ -1,7 +1,5 @@
 package ru.job4j.collection;
 
-import org.w3c.dom.Node;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -28,6 +26,24 @@ public class ForwardLinked<T> implements Iterable {
          }
          head = head.next;
          return first.value;
+     }
+
+     public T deleteLast() {
+         if (head == null) {
+             throw new NoSuchElementException();
+         }
+         Node<T> prev = null;
+         Node<T> current = head;
+         while (current.next != null) {
+             prev = current;
+             current = current.next;
+         }
+         if (prev == null) {
+             head = null;
+         } else {
+             prev.next = null;
+         }
+         return current.value;
      }
 
 
