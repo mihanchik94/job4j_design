@@ -10,6 +10,10 @@ package ru.job4j.collection.map;
 Ответить на вопросы:
 5.1. Объекты попали в один бакет или в разные?
 5.2. Вызывался ли в этом случае equals() у объектов User или нет? Объяснить почему
+
+6. Переопределить в классе User метод hashCode(), метод equals() не переопределять.
+6.1. Объекты попали в один бакет или в разные?
+6.2. Вызывался ли в этом случае equals() у объектов User или нет? Объяснить почему
  */
 
 
@@ -27,6 +31,7 @@ public class Main {
 
         map.put(usr1, new Object());
         map.put(usr2, new Object());
+
 
         System.out.println(usr1.hashCode());
         System.out.println(usr2.hashCode());
