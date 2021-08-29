@@ -29,4 +29,13 @@ public class User {
     public Calendar getBirthday() {
         return birthday;
     }
+
+    @Override
+    public String toString() {
+        return "User{"
+                + "name='" + name + '\''
+                + ", children=" + children
+                + ", birthday=" + birthday
+                + '}';
+    }
 }
