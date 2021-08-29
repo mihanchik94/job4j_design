@@ -1,8 +1,6 @@
-package ru.job4j.collection.ru.job4j.collection.set;
+package ru.job4j.collection.set;
 
 import org.junit.Test;
-
-import javax.swing.text.html.HTMLDocument;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -36,6 +34,7 @@ public class SimpleSetTest {
         Iterator it = set.iterator();
         assertTrue(it.hasNext());
         assertThat(it.next(), is(2));
+        assertThat(it.next(), is(3));
     }
 
     @Test (expected = NoSuchElementException.class)

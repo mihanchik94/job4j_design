@@ -1,4 +1,4 @@
-package ru.job4j.collection.ru.job4j.collection.set;
+package ru.job4j.collection.set;
 
 /*
 1. Реализовать коллекцию SimpleSet. Коллекция не должна хранить дубликаты.
@@ -32,8 +32,8 @@ public class SimpleSet<T> implements Set<T> {
     public boolean contains(T value) {
         for (T t : set) {
             if (Objects.equals(t, value)) {
+                return true;
             }
-            return true;
         }
         return false;
     }
