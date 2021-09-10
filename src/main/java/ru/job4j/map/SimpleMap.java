@@ -47,14 +47,14 @@ public class SimpleMap<K, V> implements Map<K, V> {
     //произвиодит копирование расширенной существующей таблицы
     private void expand() {
         capacity = capacity * 2;
+        MapEntry<K, V>[] oldTable = table;
         table = new MapEntry[capacity];
-        for (MapEntry<K, V> mapEntry : table) {
+        for (MapEntry<K, V> mapEntry : oldTable) {
             if (mapEntry != null) {
                 int bufferIndex = indexFor(hash(mapEntry.key.hashCode()));
                 table[bufferIndex] = mapEntry;
             }
         }
-        Arrays.copyOf(table, capacity);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
     //если значения нет, возвращает null.
     public V get(K key) {
         int index = indexFor(hash(key.hashCode()));
-        if (table[index] == null) {
+        if (table[index] == null || !table[index].key.equals(key)) {
             return null;
         }
         return table[index].value;
@@ -72,7 +72,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
     //Метод remove() в случае успешного удаления должен возвращать true, в противном случае false.
     public boolean remove(K key) {
         int index = indexFor(hash(key.hashCode()));
-        if (table[index] == null) {
+        if (table[index] == null || !table[index].key.equals(key)) {
             return false;
         } else {
             table[index] = null;
