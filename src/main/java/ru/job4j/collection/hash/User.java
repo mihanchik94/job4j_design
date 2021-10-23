@@ -2,6 +2,7 @@ package ru.job4j.collection.hash;
 
 import java.util.Objects;
 
+
 public class User {
     private String name;
     private byte age;
