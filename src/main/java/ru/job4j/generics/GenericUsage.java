@@ -51,15 +51,6 @@ public class GenericUsage {
 
     }
 
-    /**
-     *В версии 1.5 были добавлены средства обобщенного программирования.
-     *Добавим универсальный метод, который будет выводить в консоль наш список.
-     *Так как Collection<Object> не является полностью родительской коллекцией всех остальных коллекций, (т.е. имеет ограничения - например, в методе main() для типа данных в списке Integer мы получим ошибку компиляции),
-     *Вместо public void printRsl(Collection<Object> col) {...
-     *Мы используем так называемый WildCard: public void printRsl(Collection<?> col) {...
-     *В этом случае ограничений в использовании не будет.
-     */
-
     public void printRsl(Collection<?> col) {
         System.out.println("Реализация метода printRsl:");
         for (Iterator<?> it = col.iterator(); it.hasNext();) {
@@ -68,18 +59,6 @@ public class GenericUsage {
         }
     }
 
-    /**
-     *Рассмотрим второе средство обобщенного программирования, которое называется Bounded Wildcard:
-     *Мы создали класс Programmer, который наследуется от Person.
-     *При создании метода, который позволит вывести в консоль все элементы коллекции,
-     *которая может содержать объекты Person или объекты класса Programmer,
-     *в случае, если мы укажем явный тип Person (public void printInfo(Collection<Person> col) {...)
-     *и попытаемся добавить в коллекцию объект класса Programmer, мы получим ошибку в связи с несовместимостью типов.
-     *Для того чтобы справиться с проблемой используется так называемое "Ограничение сверху" или Bounded Wildcard.
-     *В этом случае вместо <Person> записывается конструкция <? extends Person> (public void printInfo(Collection<? extends Person> col) {..)
-     *При таком случае ошибки компиляции не будет.
-     */
-
     public void printInfo(Collection<? extends Person> col) {
         System.out.println("Реализация метода printInfo:");
         for (Iterator<? extends Person> it = col.iterator(); it.hasNext();) {
@@ -87,16 +66,6 @@ public class GenericUsage {
             System.out.println(next);
         }
     }
-
-    /**
-     *До этого мы рассмотрели ограничение типа сверху.
-     *Теперь рассмортим третье средство обобщенного программирования (ограничение снизу), которое называется Lower bounded Wildcard:
-     *Представим себе ситуацию, что мы хотим написать метод, который помещает объекты Integer в список и выводить этот список в консоль.
-     *При этом наш метод должен быть более гибким и работал не только с типом Integer, но и с его суперклассами (т.е. Number и Object).
-     *Чтобы реализовать такой метод, то в его объявлении должна фигурировать такая строка - List<? super Integer>.
-     *Важно понимать, что запись List<Integer> является более строгой, чем List<? super Integer>, потому что первый соответствует списку только типа Integer,
-     *тогда как второй соответствует списку любого типа, который является супертипом Integer.
-     */
 
     public void addAll(List<? super Integer> list) {
         System.out.println("Реализация метода addAll:");
