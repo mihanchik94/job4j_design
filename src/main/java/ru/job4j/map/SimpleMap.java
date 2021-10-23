@@ -11,13 +11,16 @@ public class SimpleMap<K, V> implements Map<K, V> {
 
     private MapEntry<K, V>[] table = new MapEntry[capacity];
 
+
+    /**
+     * проверяем наличие свободного места для вставки
+     * если места недостаточно, уыеличиваем размер таблицы
+     * генерируем хэш ключа и вычисляем индекс элемента
+     * проверяем занят ли данный индекс в таблице
+     * если индекс свободен, добавляем и возвращаем true
+     * в противном случае false
+     */
     @Override
-    //проверяем наличие свободного места для вставки
-    //если места недостаточно, уыеличиваем размер таблицы
-    //генерируем хэш ключа и вычисляем индекс элемента
-    //проверяем занят ли данный индекс в таблице
-    //если индекс свободен, добавляем и возвращаем true
-    //в противном случае false
     public boolean put(K key, V value) {
         if (size >= capacity * LOAD_FACTOR) {
             expand();
@@ -33,18 +36,24 @@ public class SimpleMap<K, V> implements Map<K, V> {
         return true;
     }
 
-    //генерирует hash на основе ключа
+    /**
+     * генерирует hash на основе ключа
+     */
     private int hash(int hashCode) {
         return hashCode ^ hashCode >> 16;
     }
 
-    //определяется позиция, куда будет помещен key
+    /**
+     * определяется позиция, куда будет помещен key
+     */
     private int indexFor(int hash) {
         return Math.abs(hash) % capacity;
     }
 
 
-    //произвиодит копирование расширенной существующей таблицы
+    /**
+     * произвиодит копирование расширенной существующей таблицы
+     */
     private void expand() {
         capacity = capacity * 2;
         MapEntry<K, V>[] oldTable = table;
@@ -57,9 +66,11 @@ public class SimpleMap<K, V> implements Map<K, V> {
         }
     }
 
+    /**
+     * возвращает значение по ключу
+     * если значения нет, возвращает null.
+     */
     @Override
-    //возвращает значение по ключу
-    //если значения нет, возвращает null.
     public V get(K key) {
         int index = indexFor(hash(key.hashCode()));
         if (table[index] == null || !table[index].key.equals(key)) {
@@ -68,8 +79,12 @@ public class SimpleMap<K, V> implements Map<K, V> {
         return table[index].value;
     }
 
+
+    /**
+     * Метод remove() в случае успешного удаления должен возвращать true, в противном случае false.
+     *
+     */
     @Override
-    //Метод remove() в случае успешного удаления должен возвращать true, в противном случае false.
     public boolean remove(K key) {
         int index = indexFor(hash(key.hashCode()));
         if (table[index] == null || !table[index].key.equals(key)) {

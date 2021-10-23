@@ -13,6 +13,9 @@ import java.util.List;
  * 2-ой метод - должен иметь ограничение сверху и ограничиваться классом Predator.
  *
  * 3-ий метод - должен иметь ограничение снизу и ограничиваться классом Predator.
+ *
+ * gen.printBoundedWildCard(first); - получаем несоответствие типов, так как мы можем выводить только объекты класса Predator и его наследников
+ * gen.printLowerBoundedWildCard(third); - получаем несоответствие типов, так как мы можем выводить только объекты класса Predator и экземпляры объектов его суперкласса
  */
 
 public class Generics {
@@ -31,14 +34,13 @@ public class Generics {
         gen.printObject(third);
         System.out.println();
 
-        //gen.printBoundedWildCard(first); - получаем несоответствие типов, так как мы можем выводить только объекты класса Predator и его наследников
+
+
         gen.printBoundedWildCard(second);
         gen.printBoundedWildCard(third);
         System.out.println();
-
         gen.printLowerBoundedWildCard(first);
         gen.printLowerBoundedWildCard(second);
-        //gen.printLowerBoundedWildCard(third); - получаем несоответствие типов, так как мы можем выводить только объекты класса Predator и экземпляры объектов его суперкласса
         System.out.println();
     }
 
