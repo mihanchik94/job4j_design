@@ -12,11 +12,10 @@ public class Analyze {
             map.put(user.getId(), user.getName());
         }
         for (User user : current) {
-            if (map.containsKey(user.getId())) {
-                if (!map.containsValue(user.getName())) {
-                    info.setChanged(info.getChanged() + 1);
-                }
-            } else {
+            if (map.containsKey(user.getId()) & !map.containsValue(user.getName())) {
+                info.setChanged(info.getChanged() + 1);
+            }
+            if (!map.containsKey(user.getId())) {
                 info.setAdded(info.getAdded() + 1);
             }
         }
