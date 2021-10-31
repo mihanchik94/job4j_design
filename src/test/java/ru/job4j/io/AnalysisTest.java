@@ -17,7 +17,7 @@ public class AnalysisTest {
     public void unavailable() throws IOException {
         File source = folder.newFile("source.txt");
         File target = folder.newFile("target.txt");
-        try(PrintWriter writer = new PrintWriter(source)) {
+        try (PrintWriter writer = new PrintWriter(source)) {
             writer.println("200 10:56:01");
             writer.println("200 10:57:01");
             writer.println("200 10:58:01");
@@ -28,7 +28,7 @@ public class AnalysisTest {
         }
         Analysis.unavailable(source.getAbsolutePath(), target.getAbsolutePath());
         StringBuilder result = new StringBuilder();
-        try(BufferedReader reader = new BufferedReader(new FileReader(target))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(target))) {
             reader.lines().forEach(result::append);
         }
         assertThat(result.toString(), is("Сервер не работал с 11:00:01 по 11:02:01"));
