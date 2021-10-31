@@ -20,13 +20,13 @@ public class AbuseTest {
     public void drop() throws IOException {
         File source = folder.newFile("source.txt");
         File target = folder.newFile("target.txt");
-        try(PrintWriter writer = new PrintWriter(source)) {
+        try (PrintWriter writer = new PrintWriter(source)) {
             writer.println("hello foolish dude");
             writer.println("java job4j php");
         }
         Abuse.drop(source.getAbsolutePath(), target.getAbsolutePath(), List.of("foolish", "php"));
         StringBuilder rsl = new StringBuilder();
-        try(BufferedReader reader = new BufferedReader(new FileReader(target))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(target))) {
             reader.lines().forEach(rsl::append);
         }
         assertThat(rsl.toString(), is("hello dude java job4j "));
