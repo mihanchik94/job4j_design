@@ -3,6 +3,7 @@ package ru.job4j.io.duplicates;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 public class DuplicatesFinder {
     public static void main(String[] args) throws IOException {
@@ -12,6 +13,9 @@ public class DuplicatesFinder {
     }
 
     public static void printResult(DuplicatesVisitor visitor) {
-        visitor.getFiles().entrySet().iterator().next().getValue().forEach(System.out::println);
+        List<Path> duplicateList = visitor.getFiles();
+        for (Path file : duplicateList) {
+            System.out.println(file);
+        }
     }
 }

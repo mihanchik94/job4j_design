@@ -11,23 +11,22 @@ import static java.nio.file.FileVisitResult.CONTINUE;
 
 public class DuplicatesVisitor extends SimpleFileVisitor<Path> {
     Map<FileProperty, List<Path>> files = new HashMap();
+    List<Path> duplicates = new ArrayList<>();
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
         FileProperty fileProp = new FileProperty(attrs.size(), file.getFileName().toString());
         if (files.containsKey(fileProp)) {
-            List<Path> paths = files.get(fileProp);
-            paths.add(file);
-            files.put(fileProp, paths);
+            duplicates.add(file);
+            files.put(fileProp, duplicates);
         } else {
-            List<Path> duplicate = new ArrayList<>();
-            duplicate.add(file);
-            files.put(fileProp, duplicate);
+            List<Path> paths = files.get(fileProp);
+            files.put(fileProp, paths);
         }
         return CONTINUE;
     }
 
-    public Map<FileProperty, List<Path>> getFiles() {
-        return files;
+    public List<Path> getFiles() {
+        return duplicates;
     }
 }
