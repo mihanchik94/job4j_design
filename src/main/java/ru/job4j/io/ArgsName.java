@@ -11,21 +11,35 @@ public class ArgsName {
     }
 
     private void parse(String[] args) {
-        if (args.length == 0) {
-            throw new IllegalArgumentException("Arguments are not found");
-        }
-        for (String arg : args) {
-            if (!arg.startsWith("-") || !arg.contains("=")) {
-                throw new IllegalArgumentException("Arguments are not found");
-            }
-            String[] res = arg.replaceAll("-", "").split("=");
-            if (res.length <= 1 || res[0].length() < 1 || res[1].length() < 1) {
-                throw new IllegalArgumentException("Arguments are not found");
-            } else {
-                values.put(res[0], res[1]);
+        if (!validateArray(args)) {
+            for (String arg : args) {
+                if (!validateValue(arg)) {
+                    String[] res = arg.replaceAll("-", "").split("=");
+                    if (res.length <= 1 || res[0].length() < 1 || res[1].length() < 1) {
+                        throw new IllegalArgumentException("Arguments are not found");
+                    } else {
+                        values.put(res[0], res[1]);
+                    }
+                }
             }
         }
     }
+
+    public static boolean validateArray(String[] args) {
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Arguments are not found");
+        }
+        return false;
+    }
+
+    public static boolean validateValue(String arg) {
+        if (!arg.startsWith("-") || !arg.contains("=")) {
+            throw new IllegalArgumentException("Arguments are not found");
+        }
+        return false;
+    }
+
+
 
     public static ArgsName of(String[] args) {
         ArgsName names = new ArgsName();
