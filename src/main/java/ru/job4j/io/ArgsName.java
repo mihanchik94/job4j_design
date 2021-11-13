@@ -15,13 +15,11 @@ public class ArgsName {
             for (String arg : args) {
                 if (validateValue(arg)) {
                     String[] res = arg.replaceAll("-", "").split("=");
-                    if (validateValue(arg)) {
-                        values.put(res[0], res[1]);
+                    values.put(res[0], res[1]);
                     }
                 }
             }
         }
-    }
 
     public static boolean validateArray(String[] args) {
         if (args.length == 0) {
