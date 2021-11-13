@@ -13,11 +13,9 @@ public class ArgsName {
     private void parse(String[] args) {
         if (!validateArray(args)) {
             for (String arg : args) {
-                if (!validateValue(arg)) {
+                if (validateValue(arg)) {
                     String[] res = arg.replaceAll("-", "").split("=");
-                    if (res.length <= 1 || res[0].length() < 1 || res[1].length() < 1) {
-                        throw new IllegalArgumentException("Arguments are not found");
-                    } else {
+                    if (validateValue(arg)) {
                         values.put(res[0], res[1]);
                     }
                 }
@@ -33,10 +31,10 @@ public class ArgsName {
     }
 
     public static boolean validateValue(String arg) {
-        if (!arg.startsWith("-") || !arg.contains("=")) {
+        if (!arg.startsWith("-") || !arg.contains("=") || arg.startsWith("=") || arg.endsWith("=") || arg.startsWith("-=")) {
             throw new IllegalArgumentException("Arguments are not found");
         }
-        return false;
+        return true;
     }
 
 
