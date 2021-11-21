@@ -23,22 +23,11 @@ public class Zip {
         }
     }
 
-    public static void packSingleFile(File source, File target) {
-        try (ZipOutputStream zip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(target)))) {
-            zip.putNextEntry(new ZipEntry(source.getPath()));
-            try (BufferedInputStream out = new BufferedInputStream(new FileInputStream(source))) {
-                zip.write(out.readAllBytes());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void main(String[] args) throws IOException {
-        validate(args, args.length);
         ArgsName arg = ArgsName.of(args);
-        Path start = Paths.get(arg.get("o"));
-        Path target = Paths.get(arg.get("d"));
+        Path start = Paths.get(arg.get("d"));
+        Path target = Paths.get(arg.get("o"));
+        validate(args, start, args.length);
         List<Path> files = search(start, path -> !path.toFile()
                 .getName().endsWith(Paths.get(arg.get("e")).toString()));
         packFiles(files, target.toFile());
