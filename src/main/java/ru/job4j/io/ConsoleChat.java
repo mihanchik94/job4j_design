@@ -23,7 +23,7 @@ public class ConsoleChat {
     public void run() {
         List<String> logs = new ArrayList<>();
         List<String> answers = readPhrases();
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             String line = reader.readLine();
             logs.add(line);
             while (!OUT.equals(line)) {
@@ -43,7 +43,7 @@ public class ConsoleChat {
 
     private List<String> readPhrases() {
         List<String> phrases = new ArrayList<>();
-        try(BufferedReader reader = new BufferedReader(new FileReader(botAnswers))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(botAnswers))) {
             phrases = reader.lines().collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
