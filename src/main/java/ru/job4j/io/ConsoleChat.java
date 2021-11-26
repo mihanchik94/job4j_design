@@ -52,7 +52,7 @@ public class ConsoleChat {
     }
 
     private void saveLog(List<String> log) {
-        try (PrintWriter pw = new PrintWriter(new FileWriter(path, true))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(path, Charset.forName("WINDOWS-1251"), true))) {
             log.forEach(pw::println);
         } catch (IOException e) {
             e.printStackTrace();
