@@ -10,6 +10,11 @@ public class ArgsName {
         return values.get(key);
     }
 
+
+    public Map<String, String> getValues() {
+        return values;
+    }
+
     private void parse(String[] args) {
         if (!validateArray(args)) {
             for (String arg : args) {
