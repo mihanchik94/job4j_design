@@ -60,12 +60,12 @@ public class ConsoleChat {
     }
 
     public boolean isPause(String line) {
-        if (line.equals(STOP)) {
+        if (STOP.equals(line)) {
             pause = true;
         }
-    if (line.equals(CONTINUE)) {
-        pause = false;
-    }
+        if (CONTINUE.equals(line)) {
+            pause = false;
+        }
         return pause;
     }
 
