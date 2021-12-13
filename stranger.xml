@@ -1,0 +1,8 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<stranger sex="true" age="19" name="Igor">
+    <passport number="550-771"/>
+    <statuses>
+        <status>Student</status>
+        <status>Foreigner</status>
+    </statuses>
+</stranger>

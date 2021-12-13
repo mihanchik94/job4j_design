@@ -3,6 +3,7 @@ package ru.job4j.serialization.json;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+
 public class JsonConverter {
     public static void main(String[] args) {
         final Stranger stranger = new Stranger(true, 19, "Igor", new Passport("550-771"),
