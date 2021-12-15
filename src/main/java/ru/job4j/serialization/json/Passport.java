@@ -1,9 +1,17 @@
 package ru.job4j.serialization.json;
 
 public class Passport {
-    private final String number;
+    private String number;
 
     public Passport(String number) {
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
         this.number = number;
     }
 
