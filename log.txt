@@ -1,10 +1,55 @@
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:18 +0300] "GET /items/ajax.html HTTP/1.1" 404 1113
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:23 +0300] "GET /TrackStudio HTTP/1.1" 302 -
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:23 +0300] "GET /TrackStudio/ HTTP/1.1" 404 1110
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:34 +0300] "GET /TrackStudioNew/ HTTP/1.1" 404 -
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:48 +0300] "GET / HTTP/1.1" 200 11488
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:49 +0300] "GET /tomcat.png HTTP/1.1" 200 5103
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:49 +0300] "GET /tomcat.css HTTP/1.1" 200 5931
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:49 +0300] "GET /bg-nav.png HTTP/1.1" 200 1401
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:49 +0300] "GET /bg-button.png HTTP/1.1" 200 713
-0:0:0:0:0:0:0:1 - - [19/Feb/2020:15:21:49 +0300] "GET /bg-middle.png HTTP/1.1" 200 1918
+C:\projects\job4j_design\.idea\checkstyleidea-libs\readme.txt
+C:\projects\job4j_design\404.txt
+C:\projects\job4j_design\even.txt
+C:\projects\job4j_design\input.txt
+C:\projects\job4j_design\log.txt
+C:\projects\job4j_design\multipleResult.txt
+C:\projects\job4j_design\result.txt
+C:\projects\job4j_design\src\data\botAnswers.txt
+C:\projects\job4j_design\src\data\log.txt
+C:\projects\job4j_design\src\data\text.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.AppTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.DeleteFirstLinkedTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.ForwardLinkedTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.LinkedArrayTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.set.SimpleSetTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.SimpleArrayTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.SimpleQueueTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.SimpleStackTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.generics.SimpleArrayTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.io.AbuseTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.io.AnalysisTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.io.ConfigTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.ArrayItTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.BackwardArrayItTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.EvenItTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.FlatMapTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.MatrixItTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.iterator.ListUtilsTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.map.SimpleMapTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.question.AnalyzeTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.tree.SimpleTreeTest.txt
+C:\projects\job4j_design\target\surefire-reports\ru.job4j.TriggerTest.txt
+C:\projects\job4j_elementary\.idea\checkstyleidea-libs\readme.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.bank.BankServiceTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.ConvertList2ArrayTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.ConvertListTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.DepartmentsTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.DepDescCompTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.FullSearchTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.ItemSorterTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.JobTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.LexSortTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.NotifyAccountTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.OrderConvertTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.PassportOfficeTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.StringCompareTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.UniqueTextTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.UserTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.lambda.FunctionCountingTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.list.ConvertMatrix2ListTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.search.PhoneDictionaryTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.search.PriorityQueueTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.tracker.StartUITest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.tracker.TrackerTest.txt
+C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.tracker.ValidateInputTest.txt
