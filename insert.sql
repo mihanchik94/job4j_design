@@ -1,0 +1,1 @@
+insert into clients(name, age, email) values('Igor', '21', 'igo@rambler.ru')

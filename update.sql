@@ -1,0 +1,1 @@
+update clients set email = 'igor@rambler.ru'
