@@ -21,7 +21,17 @@ insert into students(name, age, lessons_id) values('Rebecca', 15, 3);
 insert into students(name, age, lessons_id) values('Evgeniya', 17, 2);
 insert into students(name, age, lessons_id) values('Arcadiy', 28, 3);
 
-select st.name, st.age, les.name from students as st join lessons as les on st.lessons_id = les.id;
+select st.name, st.age, les.name 
+from students as st 
+join lessons as les 
+on st.lessons_id = les.id;
+
 select st.name as Имя_ученика, st.age as Возраст_ученика, les.name as Название_предмета
-from students as st join lessons as les on st.lessons_id = les.id;
-select st.name, st.age, les.name from students as st join lessons as les on st.lessons_id = les.id where st.age >= 18;
+from students as st 
+join lessons as les 
+on st.lessons_id = les.id;
+
+select st.name, st.age, les.name 
+from students as st 
+join lessons as les 
+on st.lessons_id = les.id where st.age >= 18; 
