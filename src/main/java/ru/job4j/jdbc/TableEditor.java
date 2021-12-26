@@ -8,9 +8,9 @@ public class TableEditor implements AutoCloseable {
     private Connection connection;
     private Properties properties;
 
-    public TableEditor(Connection connection, Properties properties) {
-        this.connection = connection;
+    public TableEditor(Properties properties) throws ClassNotFoundException {
         this.properties = properties;
+        initConnection();
     }
 
     private void initConnection() throws ClassNotFoundException {
