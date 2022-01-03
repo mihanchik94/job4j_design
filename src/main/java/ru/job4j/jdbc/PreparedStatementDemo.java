@@ -15,7 +15,7 @@ public class PreparedStatementDemo {
         initConnection();
     }
 
-    public void initConnection() throws Exception{
+    public void initConnection() throws Exception {
         Class.forName("db.driver");
         try {
             this.connection = DriverManager.getConnection(properties.getProperty("db.url"),
