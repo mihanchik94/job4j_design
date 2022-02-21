@@ -8,9 +8,10 @@ import java.util.concurrent.TimeUnit;
 
 public class WeakDemo {
     public static void main(String[] args) throws InterruptedException {
-        //example1();
-        //example2();
+        example1();
+        example2();
         example3();
+        safe();
     }
 
     private static void example1() throws InterruptedException {
@@ -56,5 +57,17 @@ public class WeakDemo {
         TimeUnit.SECONDS.sleep(3);
         System.out.println("from link " + weak.get());
         System.out.println("from queue " + queue.poll());
+    }
+
+    public static void safe() {
+        List<WeakReference<Object>> references = new ArrayList<>();
+        references.add(new WeakReference<>(new Object()));
+        Object strong = references.get(0).get();
+        if (strong != null) {
+            System.out.println("strong is not null");
+        } else {
+            System.out.println("strong is null");
+        }
+        Object object = strong;
     }
 }

@@ -2,6 +2,7 @@ package ru.job4j.gc.ref;
 
 import java.lang.ref.SoftReference;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,7 @@ public class SoftDemo {
     public static void main(String[] args) {
         example1();
         example2();
+        safe();
     }
 
     private static void example1() {
@@ -39,6 +41,18 @@ public class SoftDemo {
             }
         }
         System.out.println(liveObject);
+    }
+
+    public static void safe() {
+        List<WeakReference<Object>> references = new ArrayList<>();
+        references.add(new WeakReference<>(new Object()));
+        Object strong = references.get(0).get();
+        if (strong != null) {
+            System.out.println("strong is not null");
+        } else {
+            System.out.println("strong is null");
+        }
+        Object object = strong;
     }
 }
 
