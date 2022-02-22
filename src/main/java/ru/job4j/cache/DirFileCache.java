@@ -16,7 +16,7 @@ public class DirFileCache extends AbstractCache<String, String> {
     @Override
     protected String load(String key) {
         String text = null;
-        Path path = Path.of(cacheDir + File.separator + key);
+        Path path = Path.of(cacheDir, key);
         try {
             text = Files.readString(path);
         } catch (IOException e) {
