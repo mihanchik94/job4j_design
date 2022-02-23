@@ -50,7 +50,7 @@ public class CinemaTest {
         Ticket ticket = cinema.buy(account, 38, 54, date);
     }
 
-
+    @Ignore
     @Test (expected = IllegalArgumentException.class)
     public void whenInvalidDate() {
         Account account = new AccountCinema();
