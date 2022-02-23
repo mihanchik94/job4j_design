@@ -39,4 +39,34 @@ public class CinemaTest {
         List<Session> sessions = cinema.find(session -> false);
         assertNull(sessions);
     }
+
+    @Ignore
+    @Test (expected = IllegalArgumentException.class)
+    public void whenInvalidPlace() {
+        Account account = new AccountCinema();
+        Cinema cinema = new Cinema3D();
+        Calendar date = Calendar.getInstance();
+        date.set(2021, 12, 10, 12, 30);
+        Ticket ticket = cinema.buy(account, 38, 54, date);
+    }
+
+
+    @Test (expected = IllegalArgumentException.class)
+    public void whenInvalidDate() {
+        Account account = new AccountCinema();
+        Cinema cinema = new Cinema3D();
+        Calendar date = Calendar.getInstance();
+        date.set(2022, 13, 10, 12, 30);
+    }
+
+    @Ignore
+    @Test (expected = IllegalArgumentException.class)
+    public void whenBuyBusyPlace() {
+        Account account = new AccountCinema();
+        Cinema cinema = new Cinema3D();
+        Calendar date = Calendar.getInstance();
+        date.set(2022, 11, 24, 22, 25);
+        Ticket ticket = cinema.buy(account, 15, 14, date);
+        Ticket secondTicket = cinema.buy(account, 15, 14, date);
+    }
 }
