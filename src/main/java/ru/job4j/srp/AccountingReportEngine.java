@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 
 public class AccountingReportEngine implements Report {
     private Store store;
-    private static final double THOUSANDS = 1000;
+    public static final double THOUSANDS = 1000;
 
     public AccountingReportEngine(Store store) {
         this.store = store;
