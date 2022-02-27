@@ -4,7 +4,6 @@ import java.util.List;
 
 public class ControlQuality {
     private final List<Strategy> strategies;
-    private Strategy strategy;
 
     public ControlQuality(List<Strategy> strategies) {
         this.strategies = strategies;
