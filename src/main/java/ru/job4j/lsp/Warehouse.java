@@ -27,4 +27,9 @@ public class Warehouse implements Strategy {
     public List<Food> getAll() {
         return List.copyOf(wareHouse);
     }
+
+    @Override
+    public void clear() {
+        wareHouse.clear();
+    }
 }

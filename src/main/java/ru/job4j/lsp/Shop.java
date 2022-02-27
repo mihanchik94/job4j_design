@@ -31,4 +31,9 @@ public class Shop implements Strategy {
     public List<Food> getAll() {
         return List.copyOf(shop);
     }
+
+    @Override
+    public void clear() {
+        shop.clear();
+    }
 }

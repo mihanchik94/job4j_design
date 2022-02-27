@@ -28,4 +28,9 @@ public class Trash implements Strategy {
     public List<Food> getAll() {
         return List.copyOf(trash);
     }
+
+    @Override
+    public void clear() {
+        trash.clear();
+    }
 }

@@ -1,5 +1,6 @@
 package ru.job4j.lsp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ControlQuality {
@@ -25,6 +26,17 @@ public class ControlQuality {
             System.out.println(food.getName() + " moved successfully");
         } else {
             throw new IllegalArgumentException("date is wrong");
+        }
+    }
+
+    public void resort() {
+        List<Food> resortingContainer = new ArrayList<>();
+        for (Strategy strategy : strategies) {
+            resortingContainer.addAll(strategy.getAll());
+            strategy.clear();
+        }
+        for (Food food : resortingContainer) {
+            add(food);
         }
     }
 }

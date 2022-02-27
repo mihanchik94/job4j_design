@@ -8,6 +8,8 @@ public interface Strategy {
     void delete(Food food);
     boolean accept(Food food);
     List<Food> getAll();
+    void clear();
+
 
     default double storage(Food food) {
         return (double) (LocalDate.now().toEpochDay() - food.getCreateDate().toEpochDay())
