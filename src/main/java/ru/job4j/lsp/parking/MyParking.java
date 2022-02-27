@@ -14,13 +14,16 @@ public class MyParking implements Parking {
         this.truckPlaces = truckPlaces;
     }
 
-    @Override
-    public boolean parkTheCar(Car car) {
-        return false;
+    public int getCarPlaces() {
+        return carPlaces;
+    }
+
+    public int getTruckPlaces() {
+        return truckPlaces;
     }
 
     @Override
-    public boolean parkTheTruck(Car car) {
+    public boolean parkTheCar(Car car) {
         return false;
     }
 
