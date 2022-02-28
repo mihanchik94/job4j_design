@@ -24,16 +24,36 @@ public class MyParking implements Parking {
 
     @Override
     public boolean parkTheCar(Car car) {
-        return false;
+        boolean result = false;
+        if (car.getSize() == 1) {
+            if (carPlaces >= 1) {
+                parking.add(car);
+                carPlaces = carPlaces - 1;
+                result = true;
+            }
+        } else {
+            if (truckPlaces >= 1) {
+                parking.add(car);
+                truckPlaces = truckPlaces - 1;
+                result = true;
+            } else {
+                if (carPlaces >= car.getSize()) {
+                    parking.add(car);
+                    carPlaces = carPlaces - car.getSize();
+                    result = true;
+                }
+            }
+        }
+        return result;
     }
 
     @Override
     public int checkFreeParkingPlaces() {
-        return 0;
+        return (carPlaces + truckPlaces);
     }
 
     @Override
     public int getBusyPlaces() {
-        return 0;
+        return parking.size();
     }
 }

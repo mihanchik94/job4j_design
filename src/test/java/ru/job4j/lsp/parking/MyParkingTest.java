@@ -5,9 +5,9 @@ import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
 
 public class MyParkingTest {
-    @Ignore
     @Test
     public void whenParkTheCar() {
         MyParking parking = new MyParking(2, 4);
@@ -15,7 +15,6 @@ public class MyParkingTest {
         assertThat(parking.getCarPlaces(), is(1));
     }
 
-    @Ignore
     @Test
     public void whenParkTheTruck() {
         MyParking parking = new MyParking(2, 4);
@@ -23,7 +22,6 @@ public class MyParkingTest {
         assertThat(parking.getTruckPlaces(), is(3));
     }
 
-    @Ignore
     @Test
     public void whenParkTheTruckOnCarPlaces() {
         MyParking parking = new MyParking(4, 0);
@@ -31,18 +29,16 @@ public class MyParkingTest {
         assertThat(parking.getCarPlaces(), is(1));
     }
 
-    @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void whenNoPlacesToParkTheTruck() {
         MyParking parking = new MyParking(3, 0);
-        parking.parkTheCar(new Truck("Mercedes-Benz", "Actros", "P252EA", 4));
+        assertFalse(parking.parkTheCar(new Truck("Mercedes-Benz", "Actros", "P252EA", 4)));
     }
 
-    @Ignore
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void whenNoPlacesToParkThePassengerCar() {
         MyParking parking = new MyParking(0, 6);
-        parking.parkTheCar(new Sedan("Audi", "A6", "E004KH"));
+        assertFalse(parking.parkTheCar(new Sedan("Audi", "A6", "E004KH")));
     }
 
     @Ignore
