@@ -26,23 +26,10 @@ public class MyParking implements Parking {
     public boolean parkTheCar(Car car) {
         boolean result = false;
         if (car.getSize() == 1) {
-            if (carPlaces >= 1) {
-                parking.add(car);
-                carPlaces = carPlaces - 1;
-                result = true;
-            }
+            result = addCar(car);
         } else {
-            if (truckPlaces >= 1) {
-                parking.add(car);
-                truckPlaces = truckPlaces - 1;
-                result = true;
-            } else {
-                if (carPlaces >= car.getSize()) {
-                    parking.add(car);
-                    carPlaces = carPlaces - car.getSize();
-                    result = true;
-                }
-            }
+            result = addTruck(car);
+
         }
         return result;
     }
@@ -55,5 +42,31 @@ public class MyParking implements Parking {
     @Override
     public int getBusyPlaces() {
         return parking.size();
+    }
+
+    public boolean addCar(Car car) {
+        boolean result = false;
+        if (carPlaces >= 1) {
+            parking.add(car);
+            carPlaces = carPlaces - 1;
+            result = true;
+        }
+        return result;
+    }
+
+    public boolean addTruck(Car car) {
+        boolean result = false;
+        if (truckPlaces >= 1) {
+            parking.add(car);
+            truckPlaces = truckPlaces - 1;
+            result = true;
+        } else {
+            if (carPlaces >= car.getSize()) {
+                parking.add(car);
+                carPlaces = carPlaces - car.getSize();
+                result = true;
+            }
+        }
+        return result;
     }
 }

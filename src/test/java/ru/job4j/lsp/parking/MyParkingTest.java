@@ -1,6 +1,5 @@
 package ru.job4j.lsp.parking;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
@@ -41,7 +40,6 @@ public class MyParkingTest {
         assertFalse(parking.parkTheCar(new Sedan("Audi", "A6", "E004KH")));
     }
 
-    @Ignore
     @Test
     public void whenCheckFreeParkingPlaces() {
         MyParking parking = new MyParking(2, 4);
@@ -50,7 +48,6 @@ public class MyParkingTest {
         assertThat(parking.checkFreeParkingPlaces(), is(4));
     }
 
-    @Ignore
     @Test
     public void whenGetBusyParkingPlaces() {
         MyParking parking = new MyParking(2, 4);
