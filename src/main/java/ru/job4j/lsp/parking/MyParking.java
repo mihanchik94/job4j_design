@@ -60,12 +60,10 @@ public class MyParking implements Parking {
             parking.add(car);
             truckPlaces = truckPlaces - 1;
             result = true;
-        } else {
-            if (carPlaces >= car.getSize()) {
-                parking.add(car);
-                carPlaces = carPlaces - car.getSize();
-                result = true;
-            }
+        } else if (carPlaces >= car.getSize()) {
+            parking.add(car);
+            carPlaces = carPlaces - car.getSize();
+            result = true;
         }
         return result;
     }
