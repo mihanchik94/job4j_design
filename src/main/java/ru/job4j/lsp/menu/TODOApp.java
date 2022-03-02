@@ -18,11 +18,18 @@ public class TODOApp {
     private static void init(Menu menu) {
         Scanner in = new Scanner(System.in);
         SimpleMenuPrinter simpleMenuPrinter = new SimpleMenuPrinter();
+        ActionDelegate actionDelegate = new SimpleActionDelegate();
         while (true) {
             simpleMenuPrinter.print(menu);
             String str = in.nextLine();
             if (str.equals("exit")) {
                 break;
+            } else if (str.equals("add new task")) {
+                System.out.println("Text the parentName");
+                String parentName = in.nextLine();
+                System.out.println("Text the childName");
+                String childName = in.nextLine();
+                menu.add(parentName, childName, actionDelegate);
             }
             if (menu.select(str).isPresent()) {
                 menu.select(str).get().getActionDelegate().delegate();
