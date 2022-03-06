@@ -15,7 +15,7 @@ public class SimpleMenu implements Menu {
             rsl = true;
         } else {
             Optional<ItemInfo> parentInfo = findItem(parentName);
-            if (parentInfo.isPresent()) {
+            if (parentInfo.isPresent() && findItem(childName).isEmpty()) {
                 MenuItem childItem = new SimpleMenuItem(childName, actionDelegate);
                 parentInfo.get().menuItem.getChildren().add(childItem);
                 rsl = true;
@@ -54,15 +54,16 @@ public class SimpleMenu implements Menu {
     }
 
     private Optional<ItemInfo> findByPredicate(Predicate<ItemInfo> condition) {
-        Optional<ItemInfo>[] rsl = new Optional[]{Optional.empty()};
+        Optional<ItemInfo> rsl = Optional.empty();
         DFSIterator dfsIterator = new DFSIterator();
         while (dfsIterator.hasNext()) {
             ItemInfo itemInfo = dfsIterator.next();
             if (condition.test(itemInfo)) {
-                rsl[0] = Optional.of(itemInfo);
+                rsl = Optional.of(itemInfo);
+                break;
             }
         }
-        return rsl[0];
+        return rsl;
     }
 
     private static class SimpleMenuItem implements MenuItem {
