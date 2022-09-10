@@ -1,15 +1,5 @@
 package ru.job4j.collection.set;
 
-/*
-1. Реализовать коллекцию SimpleSet. Коллекция не должна хранить дубликаты.
-Для хранения использовать SimpleArray из прошлого задания.
-
-2. Для сравнения объектов использовать метод:
-https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)
-
- */
-
-
 import ru.job4j.collection.SimpleArray;
 
 import java.util.Iterator;

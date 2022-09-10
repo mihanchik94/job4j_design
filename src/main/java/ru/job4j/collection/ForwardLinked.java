@@ -3,7 +3,7 @@ package ru.job4j.collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ForwardLinked<T> implements Iterable {
+public class ForwardLinked<T> implements Iterable<T> {
     private Node<T> head;
 
 
@@ -69,8 +69,8 @@ public class ForwardLinked<T> implements Iterable {
     }
 
     @Override
-    public Iterator iterator() {
-        return new Iterator() {
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
             ForwardLinked.Node<T> node = head;
 
             @Override

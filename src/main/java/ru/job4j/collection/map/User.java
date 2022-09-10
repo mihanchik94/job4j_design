@@ -1,10 +1,5 @@
 package ru.job4j.collection.map;
 
-/*
-Создать модель User и три поля String name, int children, Calendar birthday.
-Поля должны быть приватными. Добавьте конструктор.
- */
-
 import java.util.Calendar;
 import java.util.Objects;
 
