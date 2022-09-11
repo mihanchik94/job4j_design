@@ -1,5 +1,5 @@
 /**Создаем триггер, который прибавляет налог на statement-уровне после добавления элементов**/
-crecate or replace function VAT_ST() 
+create or replace function VAT_ST()
 returns trigger as
 $$
 BEGIN
