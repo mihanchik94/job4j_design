@@ -23,9 +23,7 @@ create or replace function VAT_ROW()
 returns trigger as
 $$
 BEGIN
-update products
-set price = price * 1.2
-where id = new.id;
+new.price = new.price + new.price * 0.2;
 return NEW;
 END;
 $$
@@ -49,7 +47,8 @@ create or replace function add_history()
 returns trigger as
 $$
 BEGIN
-insert into history_of_price (name, price, date) values (new.name, new.price, datetime.now);
+insert into history_of_price (name, price, date) values (new.name, new.price, current_date);
+return NEW;
 END;
 $$
 Language 'plpgsql';
