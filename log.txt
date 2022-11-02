@@ -1,55 +1,26 @@
-C:\projects\job4j_design\.idea\checkstyleidea-libs\readme.txt
-C:\projects\job4j_design\404.txt
-C:\projects\job4j_design\even.txt
-C:\projects\job4j_design\input.txt
-C:\projects\job4j_design\log.txt
-C:\projects\job4j_design\multipleResult.txt
-C:\projects\job4j_design\result.txt
-C:\projects\job4j_design\src\data\botAnswers.txt
-C:\projects\job4j_design\src\data\log.txt
-C:\projects\job4j_design\src\data\text.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.AppTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.DeleteFirstLinkedTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.ForwardLinkedTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.LinkedArrayTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.set.SimpleSetTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.SimpleArrayTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.SimpleQueueTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.collection.SimpleStackTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.generics.SimpleArrayTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.io.AbuseTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.io.AnalysisTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.io.ConfigTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.ArrayItTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.BackwardArrayItTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.EvenItTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.FlatMapTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.it.MatrixItTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.iterator.ListUtilsTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.map.SimpleMapTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.question.AnalyzeTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.tree.SimpleTreeTest.txt
-C:\projects\job4j_design\target\surefire-reports\ru.job4j.TriggerTest.txt
-C:\projects\job4j_elementary\.idea\checkstyleidea-libs\readme.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.bank.BankServiceTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.ConvertList2ArrayTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.ConvertListTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.DepartmentsTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.DepDescCompTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.FullSearchTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.ItemSorterTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.JobTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.LexSortTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.NotifyAccountTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.OrderConvertTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.PassportOfficeTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.StringCompareTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.UniqueTextTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.collection.UserTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.lambda.FunctionCountingTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.list.ConvertMatrix2ListTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.search.PhoneDictionaryTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.search.PriorityQueueTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.tracker.StartUITest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.tracker.TrackerTest.txt
-C:\projects\job4j_tracker\target\surefire-reports\ru.job4j.tracker.ValidateInputTest.txt
+[0.010s][info][gc] Using Serial
+[3.728s][info][gc] GC(0) Pause Young (Allocation Failure) 4M->2M(15M) 4.313ms
+[3.819s][info][gc] GC(1) Pause Young (Allocation Failure) 6M->2M(15M) 3.499ms
+[3.880s][info][gc] GC(2) Pause Young (Allocation Failure) 7M->4M(15M) 4.270ms
+[4.038s][info][gc] GC(3) Pause Young (Allocation Failure) 8M->4M(15M) 3.093ms
+[5.284s][info][gc] GC(4) Pause Young (Allocation Failure) 8M->5M(15M) 6.837ms
+[27.476s][info][gc] GC(5) Pause Young (Allocation Failure) 9M->5M(15M) 2.240ms
+[27.485s][info][gc] GC(6) Pause Young (Allocation Failure) 9M->5M(15M) 0.577ms
+[27.494s][info][gc] GC(7) Pause Young (Allocation Failure) 9M->5M(15M) 0.545ms
+[27.503s][info][gc] GC(8) Pause Young (Allocation Failure) 9M->5M(15M) 0.568ms
+[27.512s][info][gc] GC(9) Pause Young (Allocation Failure) 9M->5M(15M) 0.668ms
+[27.520s][info][gc] GC(10) Pause Young (Allocation Failure) 9M->5M(15M) 0.571ms
+[27.524s][info][gc] GC(11) Pause Young (Allocation Failure) 9M->5M(15M) 0.549ms
+[27.529s][info][gc] GC(12) Pause Young (Allocation Failure) 9M->5M(15M) 0.491ms
+[28.258s][info][gc] GC(13) Pause Young (Allocation Failure) 9M->5M(15M) 3.115ms
+[63.308s][info][gc] GC(14) Pause Young (Allocation Failure) 9M->5M(15M) 1.462ms
+[90.398s][info][gc] GC(15) Pause Young (Allocation Failure) 9M->5M(15M) 0.785ms
+[90.403s][info][gc] GC(16) Pause Young (Allocation Failure) 9M->5M(15M) 0.740ms
+[90.407s][info][gc] GC(17) Pause Young (Allocation Failure) 9M->5M(15M) 0.717ms
+[90.412s][info][gc] GC(18) Pause Young (Allocation Failure) 9M->5M(15M) 0.726ms
+[90.416s][info][gc] GC(19) Pause Young (Allocation Failure) 9M->5M(15M) 0.719ms
+[90.421s][info][gc] GC(20) Pause Young (Allocation Failure) 9M->5M(15M) 0.834ms
+[90.425s][info][gc] GC(21) Pause Young (Allocation Failure) 9M->5M(15M) 0.509ms
+[90.429s][info][gc] GC(22) Pause Young (Allocation Failure) 9M->5M(15M) 0.501ms
+[90.433s][info][gc] GC(23) Pause Young (Allocation Failure) 9M->5M(15M) 0.516ms
+[124.200s][info][gc] GC(24) Pause Young (Allocation Failure) 9M->5M(15M) 2.180ms
