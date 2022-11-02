@@ -15,7 +15,6 @@ public class CommentGenerator implements Generate {
     private UserGenerator userGenerator;
     private Random random;
 
-
     public CommentGenerator(Random random, UserGenerator userGenerator) {
         this.userGenerator = userGenerator;
         this.random = random;

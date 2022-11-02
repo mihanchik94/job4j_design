@@ -42,8 +42,7 @@ public class UserGenerator implements Generate {
         return users;
     }
 
-
-        @Override
+    @Override
     public void generate() {
         users.clear();
             for (int i = 0; i < NEW_USERS; i++) {
